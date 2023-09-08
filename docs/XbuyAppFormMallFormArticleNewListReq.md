@@ -1,0 +1,15 @@
+# XbuyAppFormMallFormArticleNewListReq
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Page** | **int32** | 当前页码 | [optional] [default to 1]
+**Limit** | **int32** | 每页数量 | [optional] [default to 10]
+**ShopId** | **int64** |  | [optional] [default to null]
+**ViewId** | **int64** |  | [optional] [default to null]
+**CatId** | **int64** |  | [optional] [default to null]
+**Title** | **string** |  | [optional] [default to null]
+**Type_** | **int32** |  | [optional] [default to null]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
