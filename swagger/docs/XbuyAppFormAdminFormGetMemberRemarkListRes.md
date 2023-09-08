@@ -1,0 +1,14 @@
+# XbuyAppFormAdminFormGetMemberRemarkListRes
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | **int64** |  | [optional] [default to null]
+**Remark** | **string** |  | [optional] [default to null]
+**MemberId** | **int64** |  | [optional] [default to null]
+**MemberName** | **string** |  | [optional] [default to null]
+**CreateTime** | **string** |  | [optional] [default to null]
+**ShopId** | **int64** |  | [default to null]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

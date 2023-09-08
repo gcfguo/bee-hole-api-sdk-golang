@@ -1,0 +1,44 @@
+# XbuyAppFormAdminFormImportOrderReq
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**OrderId** | **string** | 订单编号 | [optional] [default to null]
+**MemberId** | **int64** | 会员ID | [optional] [default to null]
+**TotalCount** | **float64** | 总金额 | [optional] [default to null]
+**Discount** | **float64** | 优惠金额 | [optional] [default to null]
+**PostFee** | **float64** | 运费 | [optional] [default to null]
+**PostFeeTax** | **float64** | 邮费缴纳税 | [optional] [default to null]
+**InsuranceFee** | **float64** | 保险费用 | [optional] [default to null]
+**InsuranceTax** | **float64** | 保险税 | [optional] [default to null]
+**TaxFee** | **float64** | 税费 | [optional] [default to null]
+**Payment** | **float64** | 支付金额 | [optional] [default to null]
+**ActivityInfo** | **string** | 单价活动优惠信息 | [optional] [default to null]
+**UserNote** | **string** | 商家备注 | [optional] [default to null]
+**MemberNote** | **string** | 消费者备注 | [optional] [default to null]
+**FromId** | **string** | 订单来源 | [optional] [default to null]
+**PayWayId** | **int32** | 支付方式标记 | [optional] [default to null]
+**Status** | **string** | 订单状态 | [optional] [default to null]
+**ShopId** | **int64** | 订单所属店铺 | [optional] [default to null]
+**Country** | **string** | 国家 | [optional] [default to null]
+**State** | **string** | 省/州 | [optional] [default to null]
+**City** | **string** | 城市 | [optional] [default to null]
+**Street** | **string** | 街道 | [optional] [default to null]
+**Apartment** | **string** | 详细地址 | [optional] [default to null]
+**ZipCode** | **int64** | 邮编 | [optional] [default to null]
+**Phone** | **string** | 电话/手机号码 | [optional] [default to null]
+**FirstName** | **string** | 名 | [optional] [default to null]
+**LastName** | **string** | 姓 | [optional] [default to null]
+**Currency** | **string** | 交易货币类型 | [optional] [default to null]
+**TransactionId** | **string** | 交易流水号 | [optional] [default to null]
+**LogisticsName** | **string** | 物流公司名称 | [optional] [default to null]
+**ShipmentId** | **string** | 物流单号 | [optional] [default to null]
+**IdType** | **int32** | 证件类型.默认1(中华人民共和国居民身份证) | [optional] [default to null]
+**IdName** | **string** | 收货人证件姓名 | [optional] [default to null]
+**IdNumber** | **string** | 证件号 | [optional] [default to null]
+**PaidTime** | **string** | 支付时间 | [optional] [default to null]
+**CreateTime** | **string** | 创建时间 | [optional] [default to null]
+**OrderItems** | [**[]XbuyAppModelEntityMallOrderItems**](xbuy.app.model.entity.MallOrderItems.md) | 订单商品信息 | [optional] [default to null]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

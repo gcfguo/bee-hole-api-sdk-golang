@@ -1,0 +1,10 @@
+# XbuyAppFormAdminFormGroupBatchAddResourceReq
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**ResGroupId** | **int64** | 分组编号 | [optional] [default to null]
+**ResourceIds** | **[]int64** | 资源编号列表 | [optional] [default to null]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
