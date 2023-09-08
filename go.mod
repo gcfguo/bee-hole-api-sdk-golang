@@ -1,4 +1,4 @@
-module client
+module github.com/gcfguo/bee-hole-api-sdk-golang
 
 go 1.20
 
