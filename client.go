@@ -43,6 +43,8 @@ type APIClient struct {
 
 	// API Services
 
+	ApiServer *ApiServer
+
 	AfterSalesApi *AfterSalesApiService
 
 	AiApi *AiApiService

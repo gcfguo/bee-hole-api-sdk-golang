@@ -21,15 +21,15 @@ var (
 	_ context.Context
 )
 
-type DefaultApiService service
+type ApiServer service
 
 /*
-DefaultApiService 导出字典类型
+ApiServer 导出字典类型
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) ApiBaseExportGet(ctx context.Context) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) ApiBaseExportGet(ctx context.Context) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -108,13 +108,13 @@ func (a *DefaultApiService) ApiBaseExportGet(ctx context.Context) (InlineRespons
 }
 
 /*
-DefaultApiService 获取IP归属地信息
+ApiServer 获取IP归属地信息
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param ip ipv4地址
 
 @return InlineResponse200187
 */
-func (a *DefaultApiService) ApiBaseIpLocationGet(ctx context.Context, ip string) (InlineResponse200187, *http.Response, error) {
+func (a *ApiServer) ApiBaseIpLocationGet(ctx context.Context, ip string) (InlineResponse200187, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -194,13 +194,13 @@ func (a *DefaultApiService) ApiBaseIpLocationGet(ctx context.Context, ip string)
 }
 
 /*
-DefaultApiService 获取lang信息
+ApiServer 获取lang信息
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param l 语言
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) ApiBaseLangGet(ctx context.Context, l string) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) ApiBaseLangGet(ctx context.Context, l string) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -280,13 +280,13 @@ func (a *DefaultApiService) ApiBaseLangGet(ctx context.Context, l string) (Inlin
 }
 
 /*
-DefaultApiService 清空日志
+ApiServer 清空日志
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) ApiLogClearPost(ctx context.Context, body XbuyAppFormApiFormLogClearReq) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) ApiLogClearPost(ctx context.Context, body XbuyAppFormApiFormLogClearReq) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -367,13 +367,13 @@ func (a *DefaultApiService) ApiLogClearPost(ctx context.Context, body XbuyAppFor
 }
 
 /*
-DefaultApiService 接收申报回执
+ApiServer 接收申报回执
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) ApiLogExamineReceivePost(ctx context.Context, body XbuyAppFormApiFormReceiveExamineReq) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) ApiLogExamineReceivePost(ctx context.Context, body XbuyAppFormApiFormReceiveExamineReq) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -454,7 +454,7 @@ func (a *DefaultApiService) ApiLogExamineReceivePost(ctx context.Context, body X
 }
 
 /*
-DefaultApiService 导出日志
+ApiServer 导出日志
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *DefaultApiApiLogExportGetOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  当前页码
@@ -485,7 +485,7 @@ type DefaultApiApiLogExportGetOpts struct {
 	ErrorCode  optional.String
 }
 
-func (a *DefaultApiService) ApiLogExportGet(ctx context.Context, localVarOptionals *DefaultApiApiLogExportGetOpts) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) ApiLogExportGet(ctx context.Context, localVarOptionals *DefaultApiApiLogExportGetOpts) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -597,7 +597,7 @@ func (a *DefaultApiService) ApiLogExportGet(ctx context.Context, localVarOptiona
 }
 
 /*
-DefaultApiService 获取日志列表
+ApiServer 获取日志列表
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *DefaultApiApiLogListGetOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  当前页码
@@ -628,7 +628,7 @@ type DefaultApiApiLogListGetOpts struct {
 	ErrorCode  optional.String
 }
 
-func (a *DefaultApiService) ApiLogListGet(ctx context.Context, localVarOptionals *DefaultApiApiLogListGetOpts) (InlineResponse20056, *http.Response, error) {
+func (a *ApiServer) ApiLogListGet(ctx context.Context, localVarOptionals *DefaultApiApiLogListGetOpts) (InlineResponse20056, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -740,12 +740,12 @@ func (a *DefaultApiService) ApiLogListGet(ctx context.Context, localVarOptionals
 }
 
 /*
-DefaultApiService 登录效验
+ApiServer 登录效验
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return InlineResponse200188
 */
-func (a *DefaultApiService) ApiLoginCheckGet(ctx context.Context) (InlineResponse200188, *http.Response, error) {
+func (a *ApiServer) ApiLoginCheckGet(ctx context.Context) (InlineResponse200188, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -824,12 +824,12 @@ func (a *DefaultApiService) ApiLoginCheckGet(ctx context.Context) (InlineRespons
 }
 
 /*
-DefaultApiService 注销登录
+ApiServer 注销登录
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) ApiLoginLogoutGet(ctx context.Context) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) ApiLoginLogoutGet(ctx context.Context) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -908,13 +908,13 @@ func (a *DefaultApiService) ApiLoginLogoutGet(ctx context.Context) (InlineRespon
 }
 
 /*
-DefaultApiService 提交登录
+ApiServer 提交登录
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse20058
 */
-func (a *DefaultApiService) ApiLoginSignPost(ctx context.Context, body XbuyAppFormApiFormLoginReq) (InlineResponse20058, *http.Response, error) {
+func (a *ApiServer) ApiLoginSignPost(ctx context.Context, body XbuyAppFormApiFormLoginReq) (InlineResponse20058, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -995,12 +995,12 @@ func (a *DefaultApiService) ApiLoginSignPost(ctx context.Context, body XbuyAppFo
 }
 
 /*
-DefaultApiService 获取登录用户的基本信息
+ApiServer 获取登录用户的基本信息
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return InlineResponse200189
 */
-func (a *DefaultApiService) ApiMemberProfileGet(ctx context.Context) (InlineResponse200189, *http.Response, error) {
+func (a *ApiServer) ApiMemberProfileGet(ctx context.Context) (InlineResponse200189, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -1079,13 +1079,13 @@ func (a *DefaultApiService) ApiMemberProfileGet(ctx context.Context) (InlineResp
 }
 
 /*
-DefaultApiService 接收运单回执
+ApiServer 接收运单回执
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) ApiOrderReceiveshipPost(ctx context.Context, body XbuyAppFormApiFormReceiveOrderShipReq) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) ApiOrderReceiveshipPost(ctx context.Context, body XbuyAppFormApiFormReceiveOrderShipReq) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -1166,13 +1166,13 @@ func (a *DefaultApiService) ApiOrderReceiveshipPost(ctx context.Context, body Xb
 }
 
 /*
-DefaultApiService 接收商品税率
+ApiServer 接收商品税率
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) ApiSkuReceiveratePost(ctx context.Context, body XbuyAppFormApiFormReceiveBarCodeRateReq) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) ApiSkuReceiveratePost(ctx context.Context, body XbuyAppFormApiFormReceiveBarCodeRateReq) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -1253,14 +1253,14 @@ func (a *DefaultApiService) ApiSkuReceiveratePost(ctx context.Context, body Xbuy
 }
 
 /*
-DefaultApiService 收货地址添加和更新
+ApiServer 收货地址添加和更新
 添加和更新
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200190
 */
-func (a *DefaultApiService) MallAddressAddPost(ctx context.Context, body XbuyAppFormMallFormAddressAddReq) (InlineResponse200190, *http.Response, error) {
+func (a *ApiServer) MallAddressAddPost(ctx context.Context, body XbuyAppFormMallFormAddressAddReq) (InlineResponse200190, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -1341,13 +1341,13 @@ func (a *DefaultApiService) MallAddressAddPost(ctx context.Context, body XbuyApp
 }
 
 /*
-DefaultApiService 删除收货地址
+ApiServer 删除收货地址
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) MallAddressDeletePost(ctx context.Context, body XbuyAppFormMallFormAddressDeleteReq) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) MallAddressDeletePost(ctx context.Context, body XbuyAppFormMallFormAddressDeleteReq) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -1428,13 +1428,13 @@ func (a *DefaultApiService) MallAddressDeletePost(ctx context.Context, body Xbuy
 }
 
 /*
-DefaultApiService 收货地址列表
+ApiServer 收货地址列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200191
 */
-func (a *DefaultApiService) MallAddressListPost(ctx context.Context, body XbuyAppFormMallFormAddressListReq) (InlineResponse200191, *http.Response, error) {
+func (a *ApiServer) MallAddressListPost(ctx context.Context, body XbuyAppFormMallFormAddressListReq) (InlineResponse200191, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -1515,13 +1515,13 @@ func (a *DefaultApiService) MallAddressListPost(ctx context.Context, body XbuyAp
 }
 
 /*
-DefaultApiService 收货国家列表
+ApiServer 收货国家列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse20060
 */
-func (a *DefaultApiService) MallAddressReceivingCountryPost(ctx context.Context, body XbuyAppFormMallFormCountryListReq) (InlineResponse20060, *http.Response, error) {
+func (a *ApiServer) MallAddressReceivingCountryPost(ctx context.Context, body XbuyAppFormMallFormCountryListReq) (InlineResponse20060, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -1602,13 +1602,13 @@ func (a *DefaultApiService) MallAddressReceivingCountryPost(ctx context.Context,
 }
 
 /*
-DefaultApiService 类目列表
+ApiServer 类目列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2006
 */
-func (a *DefaultApiService) MallArticleCatListPost(ctx context.Context, body XbuyAppFormMallFormArticleCatListReq) (InlineResponse2006, *http.Response, error) {
+func (a *ApiServer) MallArticleCatListPost(ctx context.Context, body XbuyAppFormMallFormArticleCatListReq) (InlineResponse2006, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -1689,13 +1689,13 @@ func (a *DefaultApiService) MallArticleCatListPost(ctx context.Context, body Xbu
 }
 
 /*
-DefaultApiService 查询文章
+ApiServer 查询文章
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2008
 */
-func (a *DefaultApiService) MallArticleGetPost(ctx context.Context, body XbuyAppFormMallFormArticleGetReq) (InlineResponse2008, *http.Response, error) {
+func (a *ApiServer) MallArticleGetPost(ctx context.Context, body XbuyAppFormMallFormArticleGetReq) (InlineResponse2008, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -1776,13 +1776,13 @@ func (a *DefaultApiService) MallArticleGetPost(ctx context.Context, body XbuyApp
 }
 
 /*
-DefaultApiService 商城底部菜单列表
+ApiServer 商城底部菜单列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200192
 */
-func (a *DefaultApiService) MallArticleListPost(ctx context.Context, body XbuyAppFormMallFormArticleListReq) (InlineResponse200192, *http.Response, error) {
+func (a *ApiServer) MallArticleListPost(ctx context.Context, body XbuyAppFormMallFormArticleListReq) (InlineResponse200192, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -1863,13 +1863,13 @@ func (a *DefaultApiService) MallArticleListPost(ctx context.Context, body XbuyAp
 }
 
 /*
-DefaultApiService 文章列表
+ApiServer 文章列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2009
 */
-func (a *DefaultApiService) MallArticleNewListPost(ctx context.Context, body XbuyAppFormMallFormArticleNewListReq) (InlineResponse2009, *http.Response, error) {
+func (a *ApiServer) MallArticleNewListPost(ctx context.Context, body XbuyAppFormMallFormArticleNewListReq) (InlineResponse2009, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -1950,13 +1950,13 @@ func (a *DefaultApiService) MallArticleNewListPost(ctx context.Context, body Xbu
 }
 
 /*
-DefaultApiService 使用折扣码
+ApiServer 使用折扣码
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200193
 */
-func (a *DefaultApiService) MallBenefitCodeOperatePost(ctx context.Context, body XbuyAppFormMallFormBenefitCodeOperateReq) (InlineResponse200193, *http.Response, error) {
+func (a *ApiServer) MallBenefitCodeOperatePost(ctx context.Context, body XbuyAppFormMallFormBenefitCodeOperateReq) (InlineResponse200193, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -2037,14 +2037,14 @@ func (a *DefaultApiService) MallBenefitCodeOperatePost(ctx context.Context, body
 }
 
 /*
-DefaultApiService 添加购物车
+ApiServer 添加购物车
 添加购物车
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return XbuyAppFormMallFormCartAddRes
 */
-func (a *DefaultApiService) MallCartAddPost(ctx context.Context, body XbuyAppFormMallFormCartAddReq) (XbuyAppFormMallFormCartAddRes, *http.Response, error) {
+func (a *ApiServer) MallCartAddPost(ctx context.Context, body XbuyAppFormMallFormCartAddReq) (XbuyAppFormMallFormCartAddRes, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -2125,14 +2125,14 @@ func (a *DefaultApiService) MallCartAddPost(ctx context.Context, body XbuyAppFor
 }
 
 /*
-DefaultApiService 清空购物车
+ApiServer 清空购物车
 清空
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return XbuyAppFormMallFormCartClearRes
 */
-func (a *DefaultApiService) MallCartClearPost(ctx context.Context, body XbuyAppFormMallFormCartClearReq) (XbuyAppFormMallFormCartClearRes, *http.Response, error) {
+func (a *ApiServer) MallCartClearPost(ctx context.Context, body XbuyAppFormMallFormCartClearReq) (XbuyAppFormMallFormCartClearRes, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -2213,14 +2213,14 @@ func (a *DefaultApiService) MallCartClearPost(ctx context.Context, body XbuyAppF
 }
 
 /*
-DefaultApiService 获取购物车商品信息
+ApiServer 获取购物车商品信息
 获取购物车商品信息
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return XbuyAppFormMallFormCartGetRes
 */
-func (a *DefaultApiService) MallCartGetPost(ctx context.Context, body XbuyAppFormMallFormCartGetReq) (XbuyAppFormMallFormCartGetRes, *http.Response, error) {
+func (a *ApiServer) MallCartGetPost(ctx context.Context, body XbuyAppFormMallFormCartGetReq) (XbuyAppFormMallFormCartGetRes, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -2301,14 +2301,14 @@ func (a *DefaultApiService) MallCartGetPost(ctx context.Context, body XbuyAppFor
 }
 
 /*
-DefaultApiService 获取商品数量
+ApiServer 获取商品数量
 获取用户购物车商品数量
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return XbuyAppFormMallFormCartNumRes
 */
-func (a *DefaultApiService) MallCartNumPost(ctx context.Context, body XbuyAppFormMallFormCartNumReq) (XbuyAppFormMallFormCartNumRes, *http.Response, error) {
+func (a *ApiServer) MallCartNumPost(ctx context.Context, body XbuyAppFormMallFormCartNumReq) (XbuyAppFormMallFormCartNumRes, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -2389,14 +2389,14 @@ func (a *DefaultApiService) MallCartNumPost(ctx context.Context, body XbuyAppFor
 }
 
 /*
-DefaultApiService 购物车商品移出
+ApiServer 购物车商品移出
 商品移出
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return XbuyAppFormMallFormCartRemoveRes
 */
-func (a *DefaultApiService) MallCartRemovePost(ctx context.Context, body XbuyAppFormMallFormCartRemoveReq) (XbuyAppFormMallFormCartRemoveRes, *http.Response, error) {
+func (a *ApiServer) MallCartRemovePost(ctx context.Context, body XbuyAppFormMallFormCartRemoveReq) (XbuyAppFormMallFormCartRemoveRes, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -2477,14 +2477,14 @@ func (a *DefaultApiService) MallCartRemovePost(ctx context.Context, body XbuyApp
 }
 
 /*
-DefaultApiService 购物车商品数量更新
+ApiServer 购物车商品数量更新
 更新商品数量
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return XbuyAppFormMallFormCartUpdateRes
 */
-func (a *DefaultApiService) MallCartUpdatePost(ctx context.Context, body XbuyAppFormMallFormCartUpdateReq) (XbuyAppFormMallFormCartUpdateRes, *http.Response, error) {
+func (a *ApiServer) MallCartUpdatePost(ctx context.Context, body XbuyAppFormMallFormCartUpdateReq) (XbuyAppFormMallFormCartUpdateRes, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -2565,13 +2565,13 @@ func (a *DefaultApiService) MallCartUpdatePost(ctx context.Context, body XbuyApp
 }
 
 /*
-DefaultApiService 类目详情
+ApiServer 类目详情
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse20015
 */
-func (a *DefaultApiService) MallCatInfoPost(ctx context.Context, body XbuyAppFormMallFormCatInfoReq) (InlineResponse20015, *http.Response, error) {
+func (a *ApiServer) MallCatInfoPost(ctx context.Context, body XbuyAppFormMallFormCatInfoReq) (InlineResponse20015, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -2652,13 +2652,13 @@ func (a *DefaultApiService) MallCatInfoPost(ctx context.Context, body XbuyAppFor
 }
 
 /*
-DefaultApiService 类目列表
+ApiServer 类目列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200194
 */
-func (a *DefaultApiService) MallCatListPost(ctx context.Context, body XbuyAppFormMallFormCatListReq) (InlineResponse200194, *http.Response, error) {
+func (a *ApiServer) MallCatListPost(ctx context.Context, body XbuyAppFormMallFormCatListReq) (InlineResponse200194, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -2739,13 +2739,13 @@ func (a *DefaultApiService) MallCatListPost(ctx context.Context, body XbuyAppFor
 }
 
 /*
-DefaultApiService 配置列表
+ApiServer 配置列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200195
 */
-func (a *DefaultApiService) MallConfigAllPost(ctx context.Context, body XbuyAppFormMallFormMallConfigAllReq) (InlineResponse200195, *http.Response, error) {
+func (a *ApiServer) MallConfigAllPost(ctx context.Context, body XbuyAppFormMallFormMallConfigAllReq) (InlineResponse200195, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -2826,13 +2826,13 @@ func (a *DefaultApiService) MallConfigAllPost(ctx context.Context, body XbuyAppF
 }
 
 /*
-DefaultApiService 获取店铺单个配置
+ApiServer 获取店铺单个配置
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200196
 */
-func (a *DefaultApiService) MallConfigListPost(ctx context.Context, body XbuyAppFormMallFormMallConfigListReq) (InlineResponse200196, *http.Response, error) {
+func (a *ApiServer) MallConfigListPost(ctx context.Context, body XbuyAppFormMallFormMallConfigListReq) (InlineResponse200196, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -2913,13 +2913,13 @@ func (a *DefaultApiService) MallConfigListPost(ctx context.Context, body XbuyApp
 }
 
 /*
-DefaultApiService 添加收藏
+ApiServer 添加收藏
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) MallFavAddPost(ctx context.Context, body XbuyAppFormMallFormFavAddReq) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) MallFavAddPost(ctx context.Context, body XbuyAppFormMallFormFavAddReq) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -3000,13 +3000,13 @@ func (a *DefaultApiService) MallFavAddPost(ctx context.Context, body XbuyAppForm
 }
 
 /*
-DefaultApiService 取消收藏
+ApiServer 取消收藏
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) MallFavDeletePost(ctx context.Context, body XbuyAppFormMallFormFavDeleteReq) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) MallFavDeletePost(ctx context.Context, body XbuyAppFormMallFormFavDeleteReq) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -3087,13 +3087,13 @@ func (a *DefaultApiService) MallFavDeletePost(ctx context.Context, body XbuyAppF
 }
 
 /*
-DefaultApiService 收藏列表
+ApiServer 收藏列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200197
 */
-func (a *DefaultApiService) MallFavListPost(ctx context.Context, body XbuyAppFormMallFormFavListReq) (InlineResponse200197, *http.Response, error) {
+func (a *ApiServer) MallFavListPost(ctx context.Context, body XbuyAppFormMallFormFavListReq) (InlineResponse200197, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -3174,13 +3174,13 @@ func (a *DefaultApiService) MallFavListPost(ctx context.Context, body XbuyAppFor
 }
 
 /*
-DefaultApiService 收藏总数量
+ApiServer 收藏总数量
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200198
 */
-func (a *DefaultApiService) MallFavNumPost(ctx context.Context, body XbuyAppFormMallFormFavNumReq) (InlineResponse200198, *http.Response, error) {
+func (a *ApiServer) MallFavNumPost(ctx context.Context, body XbuyAppFormMallFormFavNumReq) (InlineResponse200198, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -3261,13 +3261,13 @@ func (a *DefaultApiService) MallFavNumPost(ctx context.Context, body XbuyAppForm
 }
 
 /*
-DefaultApiService 商品详情
+ApiServer 商品详情
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200199
 */
-func (a *DefaultApiService) MallGoodInfoPost(ctx context.Context, body XbuyAppFormMallFormGoodInfoReq) (InlineResponse200199, *http.Response, error) {
+func (a *ApiServer) MallGoodInfoPost(ctx context.Context, body XbuyAppFormMallFormGoodInfoReq) (InlineResponse200199, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -3348,13 +3348,13 @@ func (a *DefaultApiService) MallGoodInfoPost(ctx context.Context, body XbuyAppFo
 }
 
 /*
-DefaultApiService 商品列表
+ApiServer 商品列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse20048
 */
-func (a *DefaultApiService) MallGoodListPost(ctx context.Context, body XbuyAppFormMallFormGoodListReq) (InlineResponse20048, *http.Response, error) {
+func (a *ApiServer) MallGoodListPost(ctx context.Context, body XbuyAppFormMallFormGoodListReq) (InlineResponse20048, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -3435,13 +3435,13 @@ func (a *DefaultApiService) MallGoodListPost(ctx context.Context, body XbuyAppFo
 }
 
 /*
-DefaultApiService 同类目商品
+ApiServer 同类目商品
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200200
 */
-func (a *DefaultApiService) MallGoodSameCatPost(ctx context.Context, body XbuyAppFormMallFormGoodSameCatReq) (InlineResponse200200, *http.Response, error) {
+func (a *ApiServer) MallGoodSameCatPost(ctx context.Context, body XbuyAppFormMallFormGoodSameCatReq) (InlineResponse200200, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -3522,14 +3522,14 @@ func (a *DefaultApiService) MallGoodSameCatPost(ctx context.Context, body XbuyAp
 }
 
 /*
-DefaultApiService 订单创建
+ApiServer 订单创建
 订单创建
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200205
 */
-func (a *DefaultApiService) MallOrderCreatePost(ctx context.Context, body XbuyAppFormMallFormOrderCreateReq) (InlineResponse200205, *http.Response, error) {
+func (a *ApiServer) MallOrderCreatePost(ctx context.Context, body XbuyAppFormMallFormOrderCreateReq) (InlineResponse200205, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -3610,13 +3610,13 @@ func (a *DefaultApiService) MallOrderCreatePost(ctx context.Context, body XbuyAp
 }
 
 /*
-DefaultApiService 生成保险单
+ApiServer 生成保险单
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) MallOrderInsuredPost(ctx context.Context, body XbuyAppFormMallFormInsuredReq) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) MallOrderInsuredPost(ctx context.Context, body XbuyAppFormMallFormInsuredReq) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -3697,14 +3697,14 @@ func (a *DefaultApiService) MallOrderInsuredPost(ctx context.Context, body XbuyA
 }
 
 /*
-DefaultApiService 订单列表
+ApiServer 订单列表
 订单列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200206
 */
-func (a *DefaultApiService) MallOrderListPost(ctx context.Context, body XbuyAppFormMallFormOrderListReq) (InlineResponse200206, *http.Response, error) {
+func (a *ApiServer) MallOrderListPost(ctx context.Context, body XbuyAppFormMallFormOrderListReq) (InlineResponse200206, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -3785,13 +3785,13 @@ func (a *DefaultApiService) MallOrderListPost(ctx context.Context, body XbuyAppF
 }
 
 /*
-DefaultApiService 更新支付人信息
+ApiServer 更新支付人信息
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) MallOrderPayerUpdatePost(ctx context.Context, body XbuyAppFormMallFormUpdatePayerInfoReq) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) MallOrderPayerUpdatePost(ctx context.Context, body XbuyAppFormMallFormUpdatePayerInfoReq) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -3872,13 +3872,13 @@ func (a *DefaultApiService) MallOrderPayerUpdatePost(ctx context.Context, body X
 }
 
 /*
-DefaultApiService 生成支付凭据
+ApiServer 生成支付凭据
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200207
 */
-func (a *DefaultApiService) MallOrderPaymentCredentialPost(ctx context.Context, body XbuyAppFormMallFormGeneratePaymentCredentialReq) (InlineResponse200207, *http.Response, error) {
+func (a *ApiServer) MallOrderPaymentCredentialPost(ctx context.Context, body XbuyAppFormMallFormGeneratePaymentCredentialReq) (InlineResponse200207, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -3959,14 +3959,14 @@ func (a *DefaultApiService) MallOrderPaymentCredentialPost(ctx context.Context, 
 }
 
 /*
-DefaultApiService 订单支付
+ApiServer 订单支付
 订单支付
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return XbuyAppFormMallFormOrderPayRes
 */
-func (a *DefaultApiService) MallOrderPaymentPost(ctx context.Context, body XbuyAppFormMallFormOrderPayReq) (XbuyAppFormMallFormOrderPayRes, *http.Response, error) {
+func (a *ApiServer) MallOrderPaymentPost(ctx context.Context, body XbuyAppFormMallFormOrderPayReq) (XbuyAppFormMallFormOrderPayRes, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -4047,13 +4047,13 @@ func (a *DefaultApiService) MallOrderPaymentPost(ctx context.Context, body XbuyA
 }
 
 /*
-DefaultApiService 商品预下单
+ApiServer 商品预下单
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return XbuyAppFormMallFormPreorderRes
 */
-func (a *DefaultApiService) MallOrderPreorderPost(ctx context.Context, body XbuyAppFormMallFormPreorderReq) (XbuyAppFormMallFormPreorderRes, *http.Response, error) {
+func (a *ApiServer) MallOrderPreorderPost(ctx context.Context, body XbuyAppFormMallFormPreorderReq) (XbuyAppFormMallFormPreorderRes, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -4134,14 +4134,14 @@ func (a *DefaultApiService) MallOrderPreorderPost(ctx context.Context, body Xbuy
 }
 
 /*
-DefaultApiService 获取预支付订单
+ApiServer 获取预支付订单
 获取预支付订单
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200208
 */
-func (a *DefaultApiService) MallOrderPrepayListPost(ctx context.Context, body XbuyAppFormMallFormPrepayOrderListReq) (InlineResponse200208, *http.Response, error) {
+func (a *ApiServer) MallOrderPrepayListPost(ctx context.Context, body XbuyAppFormMallFormPrepayOrderListReq) (InlineResponse200208, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -4222,14 +4222,14 @@ func (a *DefaultApiService) MallOrderPrepayListPost(ctx context.Context, body Xb
 }
 
 /*
-DefaultApiService 交易查询
+ApiServer 交易查询
 交易查询
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param prepayId
 
 @return XbuyAppFormMallFormQueryOrderRes
 */
-func (a *DefaultApiService) MallOrderQueryGet(ctx context.Context, prepayId string) (XbuyAppFormMallFormQueryOrderRes, *http.Response, error) {
+func (a *ApiServer) MallOrderQueryGet(ctx context.Context, prepayId string) (XbuyAppFormMallFormQueryOrderRes, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -4309,14 +4309,14 @@ func (a *DefaultApiService) MallOrderQueryGet(ctx context.Context, prepayId stri
 }
 
 /*
-DefaultApiService 生成售后单
+ApiServer 生成售后单
 生成售后单
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return XbuyAppFormMallFormSalesOrderCreateRes
 */
-func (a *DefaultApiService) MallOrderSalesOrderCreatePost(ctx context.Context, body XbuyAppFormMallFormSalesOrderCreateReq) (XbuyAppFormMallFormSalesOrderCreateRes, *http.Response, error) {
+func (a *ApiServer) MallOrderSalesOrderCreatePost(ctx context.Context, body XbuyAppFormMallFormSalesOrderCreateReq) (XbuyAppFormMallFormSalesOrderCreateRes, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -4397,14 +4397,14 @@ func (a *DefaultApiService) MallOrderSalesOrderCreatePost(ctx context.Context, b
 }
 
 /*
-DefaultApiService 售后单列表
+ApiServer 售后单列表
 售后单列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return XbuyAppFormMallFormSalesOrderListRes
 */
-func (a *DefaultApiService) MallOrderSalesOrderListPost(ctx context.Context, body XbuyAppFormMallFormSalesOrderListReq) (XbuyAppFormMallFormSalesOrderListRes, *http.Response, error) {
+func (a *ApiServer) MallOrderSalesOrderListPost(ctx context.Context, body XbuyAppFormMallFormSalesOrderListReq) (XbuyAppFormMallFormSalesOrderListRes, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -4485,14 +4485,14 @@ func (a *DefaultApiService) MallOrderSalesOrderListPost(ctx context.Context, bod
 }
 
 /*
-DefaultApiService 订单物流
+ApiServer 订单物流
 订单物流列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200128
 */
-func (a *DefaultApiService) MallOrderWaybillListPost(ctx context.Context, body XbuyAppFormMallFormOrderWaybillExpressReq) (InlineResponse200128, *http.Response, error) {
+func (a *ApiServer) MallOrderWaybillListPost(ctx context.Context, body XbuyAppFormMallFormOrderWaybillExpressReq) (InlineResponse200128, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -4573,14 +4573,14 @@ func (a *DefaultApiService) MallOrderWaybillListPost(ctx context.Context, body X
 }
 
 /*
-DefaultApiService 获取支付方式
+ApiServer 获取支付方式
 获取支付方式
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200209
 */
-func (a *DefaultApiService) MallPmethodGetPost(ctx context.Context, body XbuyAppFormMallFormPaymentMethodGetReq) (InlineResponse200209, *http.Response, error) {
+func (a *ApiServer) MallPmethodGetPost(ctx context.Context, body XbuyAppFormMallFormPaymentMethodGetReq) (InlineResponse200209, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -4661,14 +4661,14 @@ func (a *DefaultApiService) MallPmethodGetPost(ctx context.Context, body XbuyApp
 }
 
 /*
-DefaultApiService 订单评论增加
+ApiServer 订单评论增加
 增加评论
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200210
 */
-func (a *DefaultApiService) MallReviewAddPost(ctx context.Context, body XbuyAppFormMallFormReviewAddReq) (InlineResponse200210, *http.Response, error) {
+func (a *ApiServer) MallReviewAddPost(ctx context.Context, body XbuyAppFormMallFormReviewAddReq) (InlineResponse200210, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -4749,13 +4749,13 @@ func (a *DefaultApiService) MallReviewAddPost(ctx context.Context, body XbuyAppF
 }
 
 /*
-DefaultApiService 订单评论列表
+ApiServer 订单评论列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200142
 */
-func (a *DefaultApiService) MallReviewListPost(ctx context.Context, body XbuyAppFormMallFormReviewListReq) (InlineResponse200142, *http.Response, error) {
+func (a *ApiServer) MallReviewListPost(ctx context.Context, body XbuyAppFormMallFormReviewListReq) (InlineResponse200142, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -4836,13 +4836,13 @@ func (a *DefaultApiService) MallReviewListPost(ctx context.Context, body XbuyApp
 }
 
 /*
-DefaultApiService 店铺配置列表
+ApiServer 店铺配置列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200211
 */
-func (a *DefaultApiService) MallShopConfigAllPost(ctx context.Context, body XbuyAppFormMallFormGetMallAllShopConfigsReq) (InlineResponse200211, *http.Response, error) {
+func (a *ApiServer) MallShopConfigAllPost(ctx context.Context, body XbuyAppFormMallFormGetMallAllShopConfigsReq) (InlineResponse200211, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -4923,13 +4923,13 @@ func (a *DefaultApiService) MallShopConfigAllPost(ctx context.Context, body Xbuy
 }
 
 /*
-DefaultApiService 店铺配置单个查询
+ApiServer 店铺配置单个查询
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse20059
 */
-func (a *DefaultApiService) MallShopConfigGetPost(ctx context.Context, body XbuyAppFormMallFormGetMallShopConfigsReq) (InlineResponse20059, *http.Response, error) {
+func (a *ApiServer) MallShopConfigGetPost(ctx context.Context, body XbuyAppFormMallFormGetMallShopConfigsReq) (InlineResponse20059, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -5010,12 +5010,12 @@ func (a *DefaultApiService) MallShopConfigGetPost(ctx context.Context, body Xbuy
 }
 
 /*
-DefaultApiService 店铺列表
+ApiServer 店铺列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return InlineResponse200212
 */
-func (a *DefaultApiService) MallShopListGet(ctx context.Context) (InlineResponse200212, *http.Response, error) {
+func (a *ApiServer) MallShopListGet(ctx context.Context) (InlineResponse200212, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -5094,13 +5094,13 @@ func (a *DefaultApiService) MallShopListGet(ctx context.Context) (InlineResponse
 }
 
 /*
-DefaultApiService 列表
+ApiServer 列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200213
 */
-func (a *DefaultApiService) MallShopViewPost(ctx context.Context, body XbuyAppFormMallFormShopViewListReq) (InlineResponse200213, *http.Response, error) {
+func (a *ApiServer) MallShopViewPost(ctx context.Context, body XbuyAppFormMallFormShopViewListReq) (InlineResponse200213, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -5181,13 +5181,13 @@ func (a *DefaultApiService) MallShopViewPost(ctx context.Context, body XbuyAppFo
 }
 
 /*
-DefaultApiService 商城标准类目列表
+ApiServer 商城标准类目列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200165
 */
-func (a *DefaultApiService) MallStandardCatPost(ctx context.Context, body XbuyAppFormMallFormStandardCatReq) (InlineResponse200165, *http.Response, error) {
+func (a *ApiServer) MallStandardCatPost(ctx context.Context, body XbuyAppFormMallFormStandardCatReq) (InlineResponse200165, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -5268,13 +5268,13 @@ func (a *DefaultApiService) MallStandardCatPost(ctx context.Context, body XbuyAp
 }
 
 /*
-DefaultApiService 添加订阅
+ApiServer 添加订阅
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) MallSubscribesAddPost(ctx context.Context, body XbuyAppFormMallFormSubscribesAddReq) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) MallSubscribesAddPost(ctx context.Context, body XbuyAppFormMallFormSubscribesAddReq) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -5355,13 +5355,13 @@ func (a *DefaultApiService) MallSubscribesAddPost(ctx context.Context, body Xbuy
 }
 
 /*
-DefaultApiService 删除订阅
+ApiServer 删除订阅
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) MallSubscribesDeletePost(ctx context.Context, body XbuyAppFormMallFormSubscribesDeleteReq) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) MallSubscribesDeletePost(ctx context.Context, body XbuyAppFormMallFormSubscribesDeleteReq) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -5442,13 +5442,13 @@ func (a *DefaultApiService) MallSubscribesDeletePost(ctx context.Context, body X
 }
 
 /*
-DefaultApiService 订阅列表
+ApiServer 订阅列表
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse200214
 */
-func (a *DefaultApiService) MallSubscribesListPost(ctx context.Context, body XbuyAppFormMallFormSubscribesListReq) (InlineResponse200214, *http.Response, error) {
+func (a *ApiServer) MallSubscribesListPost(ctx context.Context, body XbuyAppFormMallFormSubscribesListReq) (InlineResponse200214, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -5529,13 +5529,13 @@ func (a *DefaultApiService) MallSubscribesListPost(ctx context.Context, body Xbu
 }
 
 /*
-DefaultApiService 前端翻译添加
+ApiServer 前端翻译添加
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) MallTransAddPost(ctx context.Context, body XbuyAppFormMallFormTransAddReq) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) MallTransAddPost(ctx context.Context, body XbuyAppFormMallFormTransAddReq) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -5616,14 +5616,14 @@ func (a *DefaultApiService) MallTransAddPost(ctx context.Context, body XbuyAppFo
 }
 
 /*
-DefaultApiService
+ApiServer
 支付通知
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) NotifyPaidPost(ctx context.Context, body XbuyAppFormNotifyFormPaymentNotifyReq) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) NotifyPaidPost(ctx context.Context, body XbuyAppFormNotifyFormPaymentNotifyReq) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -5704,14 +5704,14 @@ func (a *DefaultApiService) NotifyPaidPost(ctx context.Context, body XbuyAppForm
 }
 
 /*
-DefaultApiService
+ApiServer
 退款通知
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param body
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) NotifyRefundedPost(ctx context.Context, body XbuyAppFormNotifyFormRefundNotifyReq) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) NotifyRefundedPost(ctx context.Context, body XbuyAppFormNotifyFormRefundNotifyReq) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -5792,12 +5792,12 @@ func (a *DefaultApiService) NotifyRefundedPost(ctx context.Context, body XbuyApp
 }
 
 /*
-DefaultApiService Facebook授权回调
+ApiServer Facebook授权回调
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) OauthFacebookCallbackGet(ctx context.Context) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) OauthFacebookCallbackGet(ctx context.Context) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -5876,12 +5876,12 @@ func (a *DefaultApiService) OauthFacebookCallbackGet(ctx context.Context) (Inlin
 }
 
 /*
-DefaultApiService Facebook授权
+ApiServer Facebook授权
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) OauthFacebookGet(ctx context.Context) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) OauthFacebookGet(ctx context.Context) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -5960,7 +5960,7 @@ func (a *DefaultApiService) OauthFacebookGet(ctx context.Context) (InlineRespons
 }
 
 /*
-DefaultApiService Google授权回调
+ApiServer Google授权回调
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *DefaultApiOauthGoogleCallbackGetOpts - Optional Parameters:
      * @param "Code" (optional.String) -
@@ -5973,7 +5973,7 @@ type DefaultApiOauthGoogleCallbackGetOpts struct {
 	State optional.String
 }
 
-func (a *DefaultApiService) OauthGoogleCallbackGet(ctx context.Context, localVarOptionals *DefaultApiOauthGoogleCallbackGetOpts) (InlineResponse200215, *http.Response, error) {
+func (a *ApiServer) OauthGoogleCallbackGet(ctx context.Context, localVarOptionals *DefaultApiOauthGoogleCallbackGetOpts) (InlineResponse200215, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -6058,13 +6058,13 @@ func (a *DefaultApiService) OauthGoogleCallbackGet(ctx context.Context, localVar
 }
 
 /*
-DefaultApiService Google授权
+ApiServer Google授权
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param returnUrl
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) OauthGoogleGet(ctx context.Context, returnUrl string) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) OauthGoogleGet(ctx context.Context, returnUrl string) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -6144,7 +6144,7 @@ func (a *DefaultApiService) OauthGoogleGet(ctx context.Context, returnUrl string
 }
 
 /*
-DefaultApiService 微软授权回调
+ApiServer 微软授权回调
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *DefaultApiOauthMicrosoftCallbackGetOpts - Optional Parameters:
      * @param "Code" (optional.String) -
@@ -6157,7 +6157,7 @@ type DefaultApiOauthMicrosoftCallbackGetOpts struct {
 	State optional.String
 }
 
-func (a *DefaultApiService) OauthMicrosoftCallbackGet(ctx context.Context, localVarOptionals *DefaultApiOauthMicrosoftCallbackGetOpts) (InlineResponse200216, *http.Response, error) {
+func (a *ApiServer) OauthMicrosoftCallbackGet(ctx context.Context, localVarOptionals *DefaultApiOauthMicrosoftCallbackGetOpts) (InlineResponse200216, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -6242,13 +6242,13 @@ func (a *DefaultApiService) OauthMicrosoftCallbackGet(ctx context.Context, local
 }
 
 /*
-DefaultApiService 微软授权
+ApiServer 微软授权
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param returnUrl
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) OauthMicrosoftGet(ctx context.Context, returnUrl string) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) OauthMicrosoftGet(ctx context.Context, returnUrl string) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -6328,12 +6328,12 @@ func (a *DefaultApiService) OauthMicrosoftGet(ctx context.Context, returnUrl str
 }
 
 /*
-DefaultApiService Twitter授权回调
+ApiServer Twitter授权回调
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) OauthTwitterCallbackGet(ctx context.Context) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) OauthTwitterCallbackGet(ctx context.Context) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -6412,12 +6412,12 @@ func (a *DefaultApiService) OauthTwitterCallbackGet(ctx context.Context) (Inline
 }
 
 /*
-DefaultApiService Twitter授权
+ApiServer Twitter授权
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return InlineResponse2007
 */
-func (a *DefaultApiService) OauthTwitterGet(ctx context.Context) (InlineResponse2007, *http.Response, error) {
+func (a *ApiServer) OauthTwitterGet(ctx context.Context) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -6496,7 +6496,7 @@ func (a *DefaultApiService) OauthTwitterGet(ctx context.Context) (InlineResponse
 }
 
 /*
-DefaultApiService 微信授权回调
+ApiServer 微信授权回调
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *DefaultApiOauthWechatCallbackGetOpts - Optional Parameters:
      * @param "Code" (optional.String) -
@@ -6509,7 +6509,7 @@ type DefaultApiOauthWechatCallbackGetOpts struct {
 	State optional.String
 }
 
-func (a *DefaultApiService) OauthWechatCallbackGet(ctx context.Context, localVarOptionals *DefaultApiOauthWechatCallbackGetOpts) (InlineResponse200216, *http.Response, error) {
+func (a *ApiServer) OauthWechatCallbackGet(ctx context.Context, localVarOptionals *DefaultApiOauthWechatCallbackGetOpts) (InlineResponse200216, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -6594,13 +6594,13 @@ func (a *DefaultApiService) OauthWechatCallbackGet(ctx context.Context, localVar
 }
 
 /*
-DefaultApiService 微信授权检测
+ApiServer 微信授权检测
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param authId
 
 @return InlineResponse200218
 */
-func (a *DefaultApiService) OauthWechatCheckGet(ctx context.Context, authId string) (InlineResponse200218, *http.Response, error) {
+func (a *ApiServer) OauthWechatCheckGet(ctx context.Context, authId string) (InlineResponse200218, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -6680,7 +6680,7 @@ func (a *DefaultApiService) OauthWechatCheckGet(ctx context.Context, authId stri
 }
 
 /*
-DefaultApiService 微信授权
+ApiServer 微信授权
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
   - @param from
   - @param returnUrl
@@ -6688,7 +6688,7 @@ DefaultApiService 微信授权
 
 @return InlineResponse200217
 */
-func (a *DefaultApiService) OauthWechatGet(ctx context.Context, from string, returnUrl string, authId string) (InlineResponse200217, *http.Response, error) {
+func (a *ApiServer) OauthWechatGet(ctx context.Context, from string, returnUrl string, authId string) (InlineResponse200217, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
